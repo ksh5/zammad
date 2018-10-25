@@ -65,9 +65,8 @@ var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); 
   hasProp = {}.hasOwnProperty;
 
 (function($, window) {
-  var Base, Io, Log, Timeout, ZammadChat, myScript, scriptHost, scriptProtocol, scripts;
-  scripts = document.getElementsByTagName('script');
-  myScript = scripts[scripts.length - 1];
+  var Base, Io, Log, Timeout, ZammadChat, myScript, scriptHost, scriptProtocol;
+  myScript = document.currentScript;
   scriptHost = myScript.src.match('.*://([^:/]*).*')[1];
   scriptProtocol = myScript.src.match('(.*)://[^:/]*.*')[1];
   Base = (function() {
